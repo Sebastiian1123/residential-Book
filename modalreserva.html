@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Architectural Curator - Booking Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#d1dbec",
+                        "primary-container": "#004d56",
+                        "primary": "#00353b",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#861c23",
+                        "tertiary": "#660110",
+                        "tertiary-fixed-dim": "#ffb3b0",
+                        "outline": "#70797a",
+                        "secondary-fixed-dim": "#68dba9",
+                        "on-tertiary-fixed": "#410006",
+                        "tertiary-fixed": "#ffdad8",
+                        "inverse-surface": "#27313e",
+                        "surface": "#f8f9ff",
+                        "background": "#f8f9ff",
+                        "on-surface": "#121c28",
+                        "surface-bright": "#f8f9ff",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#dfe9fa",
+                        "on-primary-fixed": "#001f24",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#881d24",
+                        "secondary-container": "#82f5c1",
+                        "on-secondary-container": "#00714e",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#006c4a",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#d9e3f4",
+                        "on-surface-variant": "#40484a",
+                        "on-secondary-fixed": "#002114",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#005137",
+                        "primary-fixed": "#b0edf7",
+                        "surface-tint": "#296770",
+                        "surface-container": "#e5eeff",
+                        "primary-fixed-dim": "#95d0db",
+                        "on-primary-fixed-variant": "#034f58",
+                        "inverse-primary": "#95d0db",
+                        "secondary-fixed": "#85f8c4",
+                        "surface-container-highest": "#d9e3f4",
+                        "on-background": "#121c28",
+                        "on-primary-container": "#81bdc7",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#eef4ff",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#bfc8ca",
+                        "on-tertiary-container": "#ff9694"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .headline { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky bg-slate-50 dark:bg-[#001a1d] flex justify-between items-center px-6 py-3 w-full z-40 bg-surface-container-low shadow-sm">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tight text-[#004D56] dark:text-[#00b4c4]">Architectural Curator</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-slate-500 hover:text-[#004D56] transition-colors text-sm font-medium" href="#">Dashboard</a>
+<a class="text-[#004D56] font-bold border-b-2 border-[#004D56] text-sm py-1" href="#">My Bookings</a>
+<a class="text-slate-500 hover:text-[#004D56] transition-colors text-sm font-medium" href="#">Space Management</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors rounded-full">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant/30 mx-2"></div>
+<button class="px-4 py-2 text-[#004D56] font-semibold text-sm hover:bg-slate-100 transition-colors rounded-lg">Logout</button>
+<img alt="User profile avatar with role switcher" class="w-10 h-10 rounded-full border-2 border-primary-fixed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKMNYr71SPomT-2_3tVEMzZFCKOGuIJK-SIK01Lgaw_xuwbhqsrW74xKci6nbNtaSzSbas6E6WNjGDhQsyVt2mEAPpGtI8u9mTq9xkY_uzvdhbNne1SsGET0jZ7oHFTYu107SxlX06YuYTexXgRjnBTJj-2PVAj_Uv1aArJjEbpN9H6rd7xeMavtrV2X2e99BXqyWFsO3DOD3Qmy5REEsGzvr49Ux0PuiFOcAdbMUCobwWyogCigJIQ0UUfA56_VGwtpvWXfVsW08"/>
+</div>
+</header>
+<div class="flex">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-slate-100 dark:bg-[#002b30] flex flex-col h-full py-8 pr-4 z-30 pt-20">
+<div class="px-6 mb-8">
+<h2 class="text-[#004D56] dark:text-[#00b4c4] text-lg font-bold font-headline">Management Console</h2>
+<p class="text-xs text-slate-500 font-label tracking-wider uppercase">Residential Admin</p>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-6 py-3 text-slate-600 dark:text-slate-400 hover:translate-x-1 hover:bg-white/50 dark:hover:bg-white/10 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 bg-white dark:bg-[#00353b] text-[#004D56] dark:text-white rounded-r-full font-semibold shadow-sm" href="#">
+<span class="material-symbols-outlined" data-icon="event_available">event_available</span>
+<span class="font-medium">My Bookings</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-slate-600 dark:text-slate-400 hover:translate-x-1 hover:bg-white/50 dark:hover:bg-white/10 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="domain">domain</span>
+<span class="font-medium">Space Management</span>
+</a>
+</div>
+<div class="mt-auto flex flex-col gap-1">
+<a class="flex items-center gap-3 px-6 py-3 text-slate-600 dark:text-slate-400 hover:translate-x-1 hover:bg-white/50 dark:hover:bg-white/10 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span class="font-medium">Support</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-slate-600 dark:text-slate-400 hover:translate-x-1 hover:bg-white/50 dark:hover:bg-white/10 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-medium">Settings</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area (Background for Modal) -->
+<main class="ml-64 p-8 w-full min-h-screen">
+<div class="max-w-6xl mx-auto">
+<header class="mb-10">
+<h1 class="text-4xl font-extrabold text-primary tracking-tight mb-2">Amenity Reservations</h1>
+<p class="text-slate-500 font-medium">Curate and manage your residential space bookings.</p>
+</header>
+<!-- Mock Dashboard Content -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-low rounded-xl p-6 h-48 border border-transparent">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="pool">pool</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full text-xs font-bold">AVAILABLE</span>
+</div>
+<h3 class="text-xl font-bold text-primary mb-1">Rooftop Infinity Pool</h3>
+<p class="text-sm text-slate-500">North Tower, Level 42</p>
+</div>
+<div class="bg-surface-container-low rounded-xl p-6 h-48 border border-transparent">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="fitness_center">fitness_center</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full text-xs font-bold">AVAILABLE</span>
+</div>
+<h3 class="text-xl font-bold text-primary mb-1">Private Fitness Suite</h3>
+<p class="text-sm text-slate-500">East Wing, Ground Floor</p>
+</div>
+<div class="bg-surface-container-low rounded-xl p-6 h-48 border border-transparent">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="local_bar">local_bar</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-xs font-bold">OCCUPIED</span>
+</div>
+<h3 class="text-xl font-bold text-primary mb-1">Cigar &amp; Cognac Lounge</h3>
+<p class="text-sm text-slate-500">South Tower, Mezzanine</p>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Booking Modal Overlay -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-md"></div>
+<!-- Modal Container -->
+<div class="relative bg-surface-container-lowest w-full max-w-lg rounded-xl shadow-[0_24px_48px_-12px_rgba(0,53,59,0.12)] overflow-hidden">
+<!-- Header -->
+<div class="px-8 pt-8 pb-4">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-bold tracking-widest text-primary/60 font-label uppercase">Reservation Portal</span>
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-primary transition-colors" data-icon="close">close</span>
+</div>
+<h2 class="text-3xl font-extrabold text-primary headline tracking-tight">Nueva Reserva</h2>
+<p class="text-slate-500 text-sm mt-1">Complete los detalles para asegurar su espacio arquitectónico.</p>
+</div>
+<!-- Modal Body / Form -->
+<form class="px-8 pb-8 space-y-6">
+<!-- Selected Space Preview (Tonal Shift) -->
+<div class="bg-surface-container-low p-4 rounded-lg flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="gallery_thumbnail">gallery_thumbnail</span>
+</div>
+<div>
+<p class="text-xs font-bold text-primary/70 font-label uppercase">Espacio Seleccionado</p>
+<p class="text-primary font-bold">Rooftop Infinity Pool — North Tower</p>
+</div>
+</div>
+<div class="space-y-4">
+<!-- Nombre Completo -->
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-bold text-on-surface-variant font-label flex items-center" for="full_name">
+                            NOMBRE COMPLETO <span class="text-error ml-1">*</span>
+</label>
+<input class="w-full bg-surface-container-highest border-none rounded-lg p-3 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all outline-none" id="full_name" placeholder="Ej. Julian Archila" type="text"/>
+</div>
+<!-- Cédula and No. Personas -->
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-bold text-on-surface-variant font-label flex items-center" for="id_number">
+                                CÉDULA (ID) <span class="text-error ml-1">*</span>
+</label>
+<input class="w-full bg-surface-container-highest border-none rounded-lg p-3 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all outline-none" id="id_number" placeholder="10.XXX.XXX" type="text"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-bold text-on-surface-variant font-label flex items-center" for="guests">
+                                NÚMERO DE PERSONAS <span class="text-error ml-1">*</span>
+</label>
+<select class="w-full bg-surface-container-highest border-none rounded-lg p-3 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all outline-none appearance-none" id="guests">
+<option value="1">1 Persona</option>
+<option value="2">2 Personas</option>
+<option value="3">3 Personas</option>
+<option value="4">4 Personas</option>
+<option value="5">5+ Personas</option>
+</select>
+</div>
+</div>
+<!-- Hora Seleccionada (Read Only) -->
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-bold text-on-surface-variant font-label">
+                            HORA SELECCIONADA
+                        </label>
+<div class="w-full bg-surface-container-high border-none rounded-lg p-3 text-primary/60 flex items-center justify-between cursor-not-allowed">
+<span class="font-medium">Sábado, 14 de Octubre — 14:00 hrs</span>
+<span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
+</div>
+<p class="text-[10px] text-slate-400 italic">La hora ha sido pre-seleccionada según la disponibilidad del calendario.</p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center justify-end gap-3 pt-4 border-t border-outline-variant/10">
+<button class="px-6 py-2.5 rounded-lg text-primary font-bold hover:bg-slate-100 transition-colors text-sm" type="button">
+                        Cancelar
+                    </button>
+<button class="px-8 py-2.5 rounded-lg bg-primary text-on-primary font-bold shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-all text-sm bg-gradient-to-b from-primary to-[#004d56]" type="submit">
+                        Confirmar Reserva
+                    </button>
+</div>
+</form>
+</div>
+</div>
+<!-- Responsive Bottom Bar for Mobile -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface-container-lowest flex justify-around items-center py-3 z-40 border-t border-outline-variant/10">
+<button class="flex flex-col items-center gap-1 text-slate-500">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-medium">Dashboard</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" data-icon="event_available" style="font-variation-settings: 'FILL' 1;">event_available</span>
+<span class="text-[10px] font-bold">Bookings</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-500">
+<span class="material-symbols-outlined" data-icon="domain">domain</span>
+<span class="text-[10px] font-medium">Spaces</span>
+</button>
+</nav>
+</body></html>

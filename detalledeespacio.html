@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gimnasio - Management Console</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#d1dbec",
+                    "primary-container": "#004d56",
+                    "primary": "#00353b",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#861c23",
+                    "tertiary": "#660110",
+                    "tertiary-fixed-dim": "#ffb3b0",
+                    "outline": "#70797a",
+                    "secondary-fixed-dim": "#68dba9",
+                    "on-tertiary-fixed": "#410006",
+                    "tertiary-fixed": "#ffdad8",
+                    "inverse-surface": "#27313e",
+                    "surface": "#f8f9ff",
+                    "background": "#f8f9ff",
+                    "on-surface": "#121c28",
+                    "surface-bright": "#f8f9ff",
+                    "on-error": "#ffffff",
+                    "surface-container-high": "#dfe9fa",
+                    "on-primary-fixed": "#001f24",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#881d24",
+                    "secondary-container": "#82f5c1",
+                    "on-secondary-container": "#00714e",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#006c4a",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#d9e3f4",
+                    "on-surface-variant": "#40484a",
+                    "on-secondary-fixed": "#002114",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#005137",
+                    "primary-fixed": "#b0edf7",
+                    "surface-tint": "#296770",
+                    "surface-container": "#e5eeff",
+                    "primary-fixed-dim": "#95d0db",
+                    "on-primary-fixed-variant": "#034f58",
+                    "inverse-primary": "#95d0db",
+                    "secondary-fixed": "#85f8c4",
+                    "surface-container-highest": "#d9e3f4",
+                    "on-background": "#121c28",
+                    "on-primary-container": "#81bdc7",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#eef4ff",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#bfc8ca",
+                    "on-tertiary-container": "#ff9694"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-slate-100 dark:bg-[#002b30] flex flex-col h-full py-8 pr-4 z-50">
+<div class="px-6 mb-10">
+<h2 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1">Management Console</h2>
+<p class="text-sm font-body text-slate-400">Residential Admin</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center px-6 py-3 text-slate-600 dark:text-slate-400 hover:translate-x-1 transition-all hover:bg-white/50 dark:hover:bg-white/10" href="#">
+<span class="material-symbols-outlined mr-3">dashboard</span>
+<span class="font-label">Dashboard</span>
+</a>
+<a class="flex items-center px-6 py-3 text-slate-600 dark:text-slate-400 hover:translate-x-1 transition-all hover:bg-white/50 dark:hover:bg-white/10" href="#">
+<span class="material-symbols-outlined mr-3">event_available</span>
+<span class="font-label">My Bookings</span>
+</a>
+<a class="flex items-center px-6 py-3 bg-white dark:bg-[#00353b] text-[#004D56] dark:text-white rounded-r-full font-semibold shadow-sm transition-all" href="#">
+<span class="material-symbols-outlined mr-3">domain</span>
+<span class="font-label">Space Management</span>
+</a>
+</nav>
+<div class="mt-auto pt-10 border-t border-outline-variant/10">
+<a class="flex items-center px-6 py-3 text-slate-600 dark:text-slate-400 hover:translate-x-1 transition-all hover:bg-white/50 dark:hover:bg-white/10" href="#">
+<span class="material-symbols-outlined mr-3">help_outline</span>
+<span class="font-label">Support</span>
+</a>
+<a class="flex items-center px-6 py-3 text-slate-600 dark:text-slate-400 hover:translate-x-1 transition-all hover:bg-white/50 dark:hover:bg-white/10" href="#">
+<span class="material-symbols-outlined mr-3">settings</span>
+<span class="font-label">Settings</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="pl-64 min-h-screen">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky z-40 bg-slate-50 dark:bg-[#001a1d] bg-surface-container-low flex justify-between items-center px-6 py-3 shadow-sm">
+<div class="flex items-center gap-4">
+<a class="flex items-center gap-2 group transition-transform duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[#004D56] dark:text-[#00b4c4]">arrow_back</span>
+<span class="text-sm font-bold text-[#004D56] dark:text-[#00b4c4] font-headline">Back to Dashboard</span>
+</a>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="text-xl font-bold tracking-tight text-[#004D56] dark:text-[#00b4c4] font-headline">Architectural Curator</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors rounded-full">notifications</button>
+<button class="material-symbols-outlined p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors rounded-full">settings</button>
+<button class="bg-[#00353b] text-white px-4 py-2 rounded-xl text-sm font-semibold hover:bg-[#004d56] transition-colors">Logout</button>
+</div>
+</div>
+</header>
+<div class="p-8 max-w-7xl mx-auto">
+<!-- Header Section with Asymmetric Layout -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-end mb-12">
+<div class="md:col-span-2">
+<h1 class="text-5xl font-extrabold tracking-tight mb-2 text-primary font-headline">Gimnasio</h1>
+<div class="flex items-center gap-3">
+<span class="label-md font-label uppercase tracking-widest text-outline">Resident Center • Level 1</span>
+<div class="h-1 w-1 bg-outline rounded-full"></div>
+<span class="text-secondary font-semibold font-label">Open Now until 22:00</span>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="bg-surface-container-low p-6 rounded-xl relative overflow-hidden group">
+<div class="relative z-10">
+<p class="text-xs font-label uppercase tracking-widest text-outline mb-1">Today's Utilization</p>
+<h3 class="text-3xl font-headline font-bold text-primary">68%</h3>
+</div>
+<div class="absolute right-0 bottom-0 opacity-10 transform translate-x-4 translate-y-4">
+<span class="material-symbols-outlined text-8xl">fitness_center</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento-style Grid for Schedule and Stats -->
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+<!-- Detailed Schedule Grid (Main Area) -->
+<div class="lg:col-span-3 space-y-6">
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm">
+<div class="flex justify-between items-center mb-10">
+<div class="space-y-1">
+<h2 class="text-2xl font-headline font-bold text-on-surface">Hourly Schedule</h2>
+<p class="text-sm text-outline font-label">Wednesday, October 25, 2023</p>
+</div>
+<div class="flex bg-surface-container-low p-1 rounded-lg">
+<button class="px-4 py-2 bg-white text-primary text-sm font-bold rounded-md shadow-sm">Daily</button>
+<button class="px-4 py-2 text-outline text-sm font-medium hover:text-primary transition-colors">Weekly</button>
+</div>
+</div>
+<!-- Schedule Logic: Tonal shifts instead of borders -->
+<div class="space-y-2">
+<!-- Time Slot Row Template -->
+<div class="grid grid-cols-12 gap-4 items-center p-3 rounded-lg bg-secondary-fixed/20 group hover:bg-secondary-fixed/30 transition-all">
+<div class="col-span-2 text-sm font-headline font-bold text-primary">06:00</div>
+<div class="col-span-7 flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-label font-semibold text-on-secondary-container">Libre</span>
+</div>
+<div class="col-span-3 flex justify-end">
+<button class="text-xs font-label font-bold text-primary border-2 border-primary/10 px-3 py-1.5 rounded-lg hover:bg-primary hover:text-white transition-all uppercase tracking-tighter">Block Slot</button>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-4 items-center p-3 rounded-lg bg-surface-container-high group">
+<div class="col-span-2 text-sm font-headline font-bold text-outline">07:00</div>
+<div class="col-span-7 flex items-center gap-3">
+<span class="material-symbols-outlined text-outline text-sm">person</span>
+<div class="flex flex-col">
+<span class="text-sm font-label font-bold text-on-surface">Eduardo Martínez</span>
+<span class="text-xs font-label text-outline">Unit 402B</span>
+</div>
+</div>
+<div class="col-span-3 flex justify-end">
+<button class="text-xs font-label font-bold text-error px-3 py-1.5 rounded-lg hover:bg-error-container transition-all uppercase tracking-tighter">Cancel Booking</button>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-4 items-center p-3 rounded-lg bg-surface-container-high group">
+<div class="col-span-2 text-sm font-headline font-bold text-outline">08:00</div>
+<div class="col-span-7 flex items-center gap-3">
+<span class="material-symbols-outlined text-outline text-sm">person</span>
+<div class="flex flex-col">
+<span class="text-sm font-label font-bold text-on-surface">Sofía Guerrero</span>
+<span class="text-xs font-label text-outline">Unit 108A</span>
+</div>
+</div>
+<div class="col-span-3 flex justify-end">
+<button class="text-xs font-label font-bold text-error px-3 py-1.5 rounded-lg hover:bg-error-container transition-all uppercase tracking-tighter">Cancel Booking</button>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-4 items-center p-3 rounded-lg bg-secondary-fixed/20 group hover:bg-secondary-fixed/30 transition-all">
+<div class="col-span-2 text-sm font-headline font-bold text-primary">09:00</div>
+<div class="col-span-7 flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-label font-semibold text-on-secondary-container">Libre</span>
+</div>
+<div class="col-span-3 flex justify-end">
+<button class="text-xs font-label font-bold text-primary border-2 border-primary/10 px-3 py-1.5 rounded-lg hover:bg-primary hover:text-white transition-all uppercase tracking-tighter">Block Slot</button>
+</div>
+</div>
+<!-- Blocked Slot Example -->
+<div class="grid grid-cols-12 gap-4 items-center p-3 rounded-lg bg-tertiary-fixed-dim/40 group">
+<div class="col-span-2 text-sm font-headline font-bold text-tertiary">10:00</div>
+<div class="col-span-7 flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-sm" style="font-variation-settings: 'FILL' 1;">engineering</span>
+<div class="flex flex-col">
+<span class="text-sm font-label font-bold text-tertiary">Mantenimiento Preventivo</span>
+<span class="text-xs font-label text-on-tertiary-fixed-variant">Bloqueado por Administración</span>
+</div>
+</div>
+<div class="col-span-3 flex justify-end">
+<button class="text-xs font-label font-bold text-on-tertiary-fixed-variant bg-white/50 px-3 py-1.5 rounded-lg hover:bg-white transition-all uppercase tracking-tighter">Unlock</button>
+</div>
+</div>
+<!-- More slots for visualization -->
+<div class="grid grid-cols-12 gap-4 items-center p-3 rounded-lg bg-secondary-fixed/20 group hover:bg-secondary-fixed/30 transition-all">
+<div class="col-span-2 text-sm font-headline font-bold text-primary">11:00</div>
+<div class="col-span-7 flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-label font-semibold text-on-secondary-container">Libre</span>
+</div>
+<div class="col-span-3 flex justify-end">
+<button class="text-xs font-label font-bold text-primary border-2 border-primary/10 px-3 py-1.5 rounded-lg hover:bg-primary hover:text-white transition-all uppercase tracking-tighter">Block Slot</button>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-4 items-center p-3 rounded-lg bg-surface-container-high group">
+<div class="col-span-2 text-sm font-headline font-bold text-outline">12:00</div>
+<div class="col-span-7 flex items-center gap-3">
+<span class="material-symbols-outlined text-outline text-sm">person</span>
+<div class="flex flex-col">
+<span class="text-sm font-label font-bold text-on-surface">Carlos Ruiz</span>
+<span class="text-xs font-label text-outline">Unit 212C</span>
+</div>
+</div>
+<div class="col-span-3 flex justify-end">
+<button class="text-xs font-label font-bold text-error px-3 py-1.5 rounded-lg hover:bg-error-container transition-all uppercase tracking-tighter">Cancel Booking</button>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-4 items-center p-3 rounded-lg bg-secondary-fixed/20 group hover:bg-secondary-fixed/30 transition-all">
+<div class="col-span-2 text-sm font-headline font-bold text-primary">13:00 - 22:00</div>
+<div class="col-span-10 text-center py-4 italic text-sm text-outline font-label bg-surface-container-low rounded-lg">
+                                    Remaining evening slots available for curated selection...
+                                </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar for Stats and Details -->
+<div class="lg:col-span-1 space-y-6">
+<!-- Space Photo Card -->
+<div class="rounded-xl overflow-hidden shadow-sm relative h-64 lg:h-48 group">
+<img alt="Luxury apartment gym" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="modern luxury apartment gym with premium cardio equipment floor-to-ceiling windows overlooking a city skyline and warm wood accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSq8BLgcsKzshL-AlWk012eBifkxHylzYr7YTKwR9IxwFNWNu1RnZ1fEpmvtGeVUb5JDFQgIQFVyxRSEXxTrmhiIVC0Npptx1PaaGcyBwX64y3fmffDQsKE6FXfQUiFqiQmteqUV-wF1aVNvNxUzGTwQovU9PXuO_Y4j7Q5MeSRTRgk1AvsyOLHal0j4vkFjds76KOa5b460pqQLMvBNhKhy3Wdy_JgO-WCFEiJ-qEQrwLOde7NscAmRLscG1Dd9QV3oEHvPOzFPE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+<div class="absolute bottom-4 left-4 text-white">
+<p class="text-xs uppercase font-label tracking-widest opacity-80">Location</p>
+<p class="font-bold font-headline">North Wing, Floor 1</p>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="bg-primary text-white p-6 rounded-xl shadow-md">
+<h3 class="text-lg font-headline font-bold mb-4">Quick Actions</h3>
+<div class="space-y-3">
+<button class="w-full flex items-center justify-between p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed">construction</span>
+<span class="text-sm font-label font-medium">Full Facility Block</span>
+</div>
+<span class="material-symbols-outlined text-sm opacity-50 group-hover:opacity-100 transition-opacity">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed">edit_calendar</span>
+<span class="text-sm font-label font-medium">Modify Policies</span>
+</div>
+<span class="material-symbols-outlined text-sm opacity-50 group-hover:opacity-100 transition-opacity">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed">download</span>
+<span class="text-sm font-label font-medium">Monthly Report</span>
+</div>
+<span class="material-symbols-outlined text-sm opacity-50 group-hover:opacity-100 transition-opacity">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Occupancy Insight -->
+<div class="bg-surface-container-high p-6 rounded-xl">
+<h3 class="text-sm font-label font-bold text-primary uppercase tracking-widest mb-4">Peak Activity</h3>
+<div class="flex items-end gap-2 h-20 mb-4">
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[40%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[60%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[80%]"></div>
+<div class="flex-1 bg-primary rounded-t-sm h-[100%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[70%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[50%]"></div>
+</div>
+<p class="text-xs text-outline font-label leading-relaxed">
+                            Historically, peak occupancy occurs between **18:00 and 20:00**. Consider adding a cleaning block mid-afternoon.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB Suppression logic applied: No FAB on Details view as per rule -->
+</body></html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Architectural Curator - Selecciona un Conjunto Residencial</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#f8f9ff",
+                    "secondary-fixed-dim": "#68dba9",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#660110",
+                    "on-tertiary-fixed-variant": "#881d24",
+                    "background": "#f8f9ff",
+                    "surface-container-high": "#dfe9fa",
+                    "surface-container-low": "#eef4ff",
+                    "surface-bright": "#f8f9ff",
+                    "on-secondary-container": "#00714e",
+                    "surface-container": "#e5eeff",
+                    "secondary-fixed": "#85f8c4",
+                    "outline-variant": "#bfc8ca",
+                    "on-primary-fixed": "#001f24",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#40484a",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#95d0db",
+                    "on-tertiary-fixed": "#410006",
+                    "on-background": "#121c28",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#ffb3b0",
+                    "on-surface": "#121c28",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#d1dbec",
+                    "secondary": "#006c4a",
+                    "primary-fixed": "#b0edf7",
+                    "tertiary-fixed": "#ffdad8",
+                    "on-secondary-fixed-variant": "#005137",
+                    "on-primary-fixed-variant": "#034f58",
+                    "primary": "#00353b",
+                    "on-tertiary-container": "#ff9694",
+                    "on-error": "#ffffff",
+                    "primary-container": "#004d56",
+                    "on-primary-container": "#81bdc7",
+                    "tertiary-container": "#861c23",
+                    "secondary-container": "#82f5c1",
+                    "inverse-surface": "#27313e",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-variant": "#d9e3f4",
+                    "on-secondary-fixed": "#002114",
+                    "primary-fixed-dim": "#95d0db",
+                    "outline": "#70797a",
+                    "surface-tint": "#296770",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#d9e3f4",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .brand-font { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopAppBar Mapping -->
+<header class="bg-white dark:bg-slate-950 flex justify-between items-center px-6 py-4 w-full fixed top-0 z-50 shadow-sm dark:shadow-none">
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold tracking-tight text-teal-900 dark:text-teal-50 brand-font">Architectural Curator</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors p-2 rounded-full cursor-pointer" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors p-2 rounded-full cursor-pointer" data-icon="settings">settings</span>
+</div>
+<div class="flex items-center gap-3 pl-4 border-l border-surface-variant/30">
+<img alt="User profile avatar" class="w-10 h-10 rounded-full object-cover ring-2 ring-surface-container-high" data-alt="Close-up portrait of a professional male administrator in a modern office setting, soft professional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDozjG16uTFH77rjK1Wtyj8rGNK_1j24sK3C-UkrTFUq5sFWnEZpJZ2RDhQqkJ3fSAovsg5dq1bn7ww_XCxcnCMwe31jcschaxrGbRBBxN38hfMaYJWSxcp7FWz_4BydWSd3mXnJxLnz-aX_n1WztCjhzeA7kOfjDarMCLhCdU9pisfH6hYfiosGHTogYz5RVZLyp8uv7pRzLPkhCjSyHJY5lea6lOj0vd4_TJhDD9HOZt0-TnxfgvY2CG-mkUYokzrMBLQY9b7dU0"/>
+<span class="text-slate-500 dark:text-slate-400 text-sm font-medium cursor-pointer hover:text-teal-700 transition-colors">Logout</span>
+</div>
+</div>
+</header>
+<main class="pt-28 pb-20 px-6 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<div class="mb-12">
+<h1 class="text-4xl md:text-5xl font-extrabold text-primary mb-4 tracking-tight">Selecciona un Conjunto Residencial</h1>
+<p class="text-on-surface-variant text-lg max-w-2xl font-light">Gestiona múltiples propiedades desde tu cuenta de administrador. Accede a métricas, residentes y mantenimiento de forma centralizada.</p>
+</div>
+<!-- Search & Filter Bar -->
+<div class="mb-10 flex flex-col md:flex-row gap-4 items-center">
+<div class="relative w-full max-w-xl">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-highest border-none rounded-xl focus:ring-2 focus:ring-primary focus:ring-opacity-20 transition-all placeholder:text-outline" placeholder="Buscar propiedad por nombre o ubicación..." type="text"/>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-2 w-full md:w-auto">
+<button class="px-6 py-4 bg-primary text-on-primary rounded-xl font-semibold text-sm whitespace-nowrap shadow-md hover:translate-y-[-2px] transition-all">Todos los Conjuntos</button>
+<button class="px-6 py-4 bg-surface-container-low text-primary rounded-xl font-semibold text-sm whitespace-nowrap hover:bg-surface-container-high transition-colors">Recientes</button>
+<button class="px-6 py-4 bg-surface-container-low text-primary rounded-xl font-semibold text-sm whitespace-nowrap hover:bg-surface-container-high transition-colors">En Mantenimiento</button>
+</div>
+</div>
+<!-- Property Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Property Card 1 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative h-64 overflow-hidden">
+<img alt="Torres del Parque" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern high-rise residential towers with glass facades reflecting a blue sky, surrounded by lush green park trees, architectural photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7Qs6JeBbqnPSUZVLTuKItAxsmE5-31ACOy40e02p8e6ZUXao1Qhe7-DlQWQAV3HPypE50Cj21AvSdfbHwWl7SXpxIaNYmzpDW4bn-_UgPRTzashcdQhyDE_Ea4MlHcGFHtDp6RL8TBRtgLgs-7iApLSR-9gbAKqI7Gz5jehdQzrp6yGHgO--U1oOrNAmXrjKyBRv3qp6wXx2-R2sr5szUiaehuwtvC8q6LUTLE7YjgmPTJUV_OUHooZDPpeJTMnS0tPorEc9FMHU"/>
+<div class="absolute top-4 right-4 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-sm text-xs font-bold uppercase tracking-wider">
+                        Activo
+                    </div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-2xl font-bold text-primary mb-2">Torres del Parque</h3>
+<div class="flex items-center text-on-surface-variant mb-6">
+<span class="material-symbols-outlined text-sm mr-2" data-icon="location_on">location_on</span>
+<span class="text-sm font-light">Calle 45 #12-80, Sector Norte</span>
+</div>
+<div class="mt-auto">
+<button class="w-full py-4 bg-primary text-on-primary rounded-lg font-bold flex items-center justify-center gap-2 group/btn hover:bg-primary-container transition-colors">
+                            Gestionar Propiedad
+                            <span class="material-symbols-outlined text-lg group-hover/btn:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Property Card 2 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative h-64 overflow-hidden">
+<img alt="Altos de la Colina" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Elegant suburban residential complex with white contemporary villas, manicured gardens, and a crystal clear swimming pool at sunrise" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIyQB0v0fwJeswkVKS9PMRrilhGx1ai1xk5yxLZiL5SUr5-ioUabk5-mOt9wmckl4Aukt99Ue0OvqNGhVyJek-1-COZgt4iJdIvyltQsHrOYv5UfP-asTvYgv8v2IUwl1hi-plBsvdbGWej274IAEIQCk77PSrCWLfHKfhBIwuCk2NL197F0bSaGyy2ri8nnD2U5IpubldI_vFCRVhTU0blBuE6SB6iVbJVT7lRULdatB8MalWx4aUFfEmVA7J86Exouc1-CpMAUc"/>
+<div class="absolute top-4 right-4 bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-sm text-xs font-bold uppercase tracking-wider">
+                        Mantenimiento
+                    </div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-2xl font-bold text-primary mb-2">Altos de la Colina</h3>
+<div class="flex items-center text-on-surface-variant mb-6">
+<span class="material-symbols-outlined text-sm mr-2" data-icon="location_on">location_on</span>
+<span class="text-sm font-light">Avenida Cerros #4-15</span>
+</div>
+<div class="mt-auto">
+<button class="w-full py-4 bg-primary text-on-primary rounded-lg font-bold flex items-center justify-center gap-2 group/btn hover:bg-primary-container transition-colors">
+                            Gestionar Propiedad
+                            <span class="material-symbols-outlined text-lg group-hover/btn:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Property Card 3 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative h-64 overflow-hidden">
+<img alt="Residencias El Faro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Sleek modern apartment building with wood accents and large balconies overlooking a coastal harbor at twilight, warm interior lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq3i9wf60CKo0fTyNt6vzwCmV3bsYuWMEPt7AyAQIEl7dup1HLPkiO7POuSTRTYWFsBi1HGgv5ps0h5XtYEHIbjQM2rTT6-mch4n6ep2eNrWbiSNdAN8zfpKOIhDZNGHSV1xJSDiLuP5smnue2D4sUpdooybWyaDend2RyvvNqvJQxyILPVa6GcvYI1cTAyQVeiHHqD1MpvFID006LpbpYxp1nhugvrULzjlwr7h9zqd2LTn3PuTnxIxbKvuwvTNdtApLaaya2BfI"/>
+<div class="absolute top-4 right-4 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-sm text-xs font-bold uppercase tracking-wider">
+                        Activo
+                    </div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-2xl font-bold text-primary mb-2">Residencias El Faro</h3>
+<div class="flex items-center text-on-surface-variant mb-6">
+<span class="material-symbols-outlined text-sm mr-2" data-icon="location_on">location_on</span>
+<span class="text-sm font-light">Carrera 8 #90-12, Zona Portuaria</span>
+</div>
+<div class="mt-auto">
+<button class="w-full py-4 bg-primary text-on-primary rounded-lg font-bold flex items-center justify-center gap-2 group/btn hover:bg-primary-container transition-colors">
+                            Gestionar Propiedad
+                            <span class="material-symbols-outlined text-lg group-hover/btn:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Property Card 4 (Bento Variation) -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col md:col-span-2">
+<div class="flex flex-col md:flex-row h-full">
+<div class="relative w-full md:w-1/2 h-64 md:h-auto overflow-hidden">
+<img alt="Distrito Empresarial &amp; Residencial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Perspective view of a stunning glass skyscraper and architectural residential complex with geometric patterns, bright blue sky background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCufSBiuYo-btFz6JuJYbATiSQH2EFbjR3P4sCDyZrTqLYmXxlBw60Zd2MrACSwfTKA2_5JSdaH_u5Z1n2qf_ElIHqfxoAmWkYwybCWSD3aXzIwOBMcCOOHOWC2E0kGKNGZDUsw26E7EhaSIcZf8MhAIQ-yPqRyv-HuSxw4lF54ZtrUk7UnbRHmTDuxAgxgoYa_w14JCB8jdFoxW5xcMja21M0iGPEBU-upmfbzolF0AD4Qab6T7h0mTv74mzIcrF8ABx0dIn8yPng"/>
+</div>
+<div class="p-8 w-full md:w-1/2 flex flex-col justify-center">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-secondary" data-icon="star" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="text-sm font-bold text-secondary uppercase tracking-widest">Premium Selection</span>
+</div>
+<h3 class="text-3xl font-extrabold text-primary mb-3">Distrito Capital</h3>
+<p class="text-on-surface-variant font-light mb-8 leading-relaxed">Complejo mixto de alta densidad con 450 unidades residenciales y zona comercial integrada. Máxima prioridad administrativa.</p>
+<div class="flex items-center text-on-surface-variant mb-8">
+<span class="material-symbols-outlined text-sm mr-2" data-icon="location_on">location_on</span>
+<span class="text-sm font-light">Av. Libertad #100-20, Centro Financiero</span>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary rounded-lg font-bold flex items-center justify-center gap-2 group/btn hover:bg-primary-container transition-colors">
+                            Gestionar Propiedad
+                            <span class="material-symbols-outlined text-lg group-hover/btn:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Add New Property Button -->
+<div class="group border-2 border-dashed border-outline-variant hover:border-primary rounded-xl overflow-hidden transition-all duration-300 flex flex-col items-center justify-center p-12 cursor-pointer bg-surface-container-low hover:bg-white">
+<div class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl" data-icon="add">add</span>
+</div>
+<h3 class="text-xl font-bold text-primary mb-2">Añadir Propiedad</h3>
+<p class="text-on-surface-variant text-center font-light">Registra un nuevo conjunto residencial en tu plataforma de gestión.</p>
+</div>
+</div>
+</main>
+<!-- Footer for Institutional Elegance -->
+<footer class="bg-surface-container-low border-t border-surface-variant/20 py-12 px-6">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col gap-2">
+<span class="text-xl font-bold tracking-tight text-teal-900 brand-font">Architectural Curator</span>
+<p class="text-on-surface-variant text-sm font-light">Precision Management for the Built Environment.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="#">Soporte Técnico</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="#">Documentación</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="#">Privacidad</a>
+</div>
+<div class="text-on-surface-variant text-xs opacity-60">
+                © 2024 Residential Suite Management. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

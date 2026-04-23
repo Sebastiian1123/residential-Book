@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#dfe9fa",
+                        "tertiary-fixed-dim": "#ffb3b0",
+                        "surface-tint": "#296770",
+                        "on-secondary-fixed": "#002114",
+                        "on-surface": "#121c28",
+                        "primary-fixed-dim": "#95d0db",
+                        "on-secondary-fixed-variant": "#005137",
+                        "secondary-container": "#82f5c1",
+                        "on-primary-fixed-variant": "#034f58",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#f8f9ff",
+                        "secondary": "#006c4a",
+                        "on-secondary-container": "#00714e",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-container": "#e5eeff",
+                        "inverse-surface": "#27313e",
+                        "inverse-primary": "#95d0db",
+                        "primary-fixed": "#b0edf7",
+                        "surface-variant": "#d9e3f4",
+                        "tertiary-fixed": "#ffdad8",
+                        "on-background": "#121c28",
+                        "tertiary": "#660110",
+                        "on-primary-container": "#81bdc7",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#d1dbec",
+                        "on-tertiary-container": "#ff9694",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#881d24",
+                        "tertiary-container": "#861c23",
+                        "surface-container-highest": "#d9e3f4",
+                        "surface": "#f8f9ff",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#85f8c4",
+                        "outline-variant": "#bfc8ca",
+                        "on-tertiary-fixed": "#410006",
+                        "on-surface-variant": "#40484a",
+                        "surface-container-low": "#eef4ff",
+                        "outline": "#70797a",
+                        "on-primary-fixed": "#001f24",
+                        "secondary-fixed-dim": "#68dba9",
+                        "primary-container": "#004d56",
+                        "background": "#f8f9ff",
+                        "primary": "#00353b",
+                        "error": "#ba1a1a"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "display": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- SideNavBar (Authority: JSON) -->
+<aside class="fixed left-0 top-0 h-screen w-64 z-50 bg-slate-50 dark:bg-slate-900 flex flex-col p-6 gap-y-4 font-manrope text-base">
+<div class="mb-8 flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">architecture</span>
+</div>
+<div>
+<h2 class="text-lg font-bold text-[#004D56] dark:text-teal-50 leading-tight">Curator Admin</h2>
+<p class="text-xs text-slate-500 font-medium">Institutional Management</p>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- Active Tab: Spaces (Closest match for Space Management) -->
+<a class="flex items-center gap-3 px-4 py-3 bg-[#004D56]/10 text-[#004D56] dark:text-teal-100 rounded-lg font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="domain" style="font-variation-settings: 'FILL' 1;">domain</span>
+<span>Spaces</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span>Residents</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="build">build</span>
+<span>Maintenance</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span>Finances</span>
+</a>
+</nav>
+<button class="mt-4 bg-primary text-on-primary py-3 px-4 rounded-xl font-semibold shadow-lg shadow-primary/20 hover:scale-95 transition-transform flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+<span>Add New Space</span>
+</button>
+<div class="mt-auto border-t border-slate-200 pt-4 flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- TopNavBar (Authority: JSON) -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-40 h-16 flex justify-between items-center px-8 bg-white dark:bg-slate-950 font-manrope text-sm font-semibold">
+<div class="flex items-center gap-6">
+<h1 class="text-xl font-black text-[#004D56] dark:text-teal-50 tracking-tight">Architectural Curator</h1>
+<div class="relative w-64 group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full bg-slate-100 border-none rounded-full py-2 pl-10 pr-4 text-xs focus:ring-2 focus:ring-[#004D56]/20" placeholder="Search spaces..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-slate-50 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-50 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-50 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="h-8 w-px bg-slate-200 mx-2"></div>
+<div class="flex items-center gap-3 pl-2">
+<div class="text-right">
+<p class="text-xs font-bold text-[#004D56]">Admin Curador</p>
+<p class="text-[10px] text-slate-400 uppercase tracking-widest">Master User</p>
+</div>
+<img alt="Administrator profile picture" class="w-9 h-9 rounded-full object-cover ring-2 ring-primary-container/20" data-alt="Close-up professional portrait of a man in a modern office with soft warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLhs7yUOnuQIUQmIFJsrqLOr4m-EVAsE70W8hKgxRyvHD1tPYECYEP1fIXbSleondoud4Q897KsNKQk3uC3bxNbx1aerscQzunN2QQzXybIhPk7Lm-CygqNwm5A8xnSgtctJCWkoR3anQ8Z-N72Pvgsceq5JcNLFrlCN3fAFid7jbvgxsX663f419xh33bJC3cEGKseLlhbp91aWC7mFEXJJt3O8n2gKyuXOgXbDbpc9GX-cYdp-cdXaDkC9VpDGVlD88VawAyCWY"/>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="ml-64 pt-16 min-h-screen bg-surface">
+<div class="max-w-7xl mx-auto p-8">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
+<div>
+<nav class="flex items-center gap-2 mb-2 text-xs text-slate-400 uppercase tracking-widest font-semibold">
+<span>Panel</span>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<span class="text-primary-container">Inventario de Espacios</span>
+</nav>
+<h2 class="font-headline text-4xl font-extrabold text-primary tracking-tight">Gestión de Espacios</h2>
+<p class="text-on-surface-variant mt-2 max-w-md">Administre las amenidades y áreas comunes de la propiedad institucional con precisión arquitectónica.</p>
+</div>
+<button class="group relative px-8 py-4 bg-primary text-on-primary rounded-xl overflow-hidden flex items-center gap-3 transition-all hover:scale-[1.02] active:scale-95 shadow-xl shadow-primary/10">
+<div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span class="font-bold tracking-tight">Crear Nuevo Espacio</span>
+</button>
+</div>
+<!-- Filters (Tonal Shift Only - No Borders) -->
+<div class="flex flex-wrap items-center gap-3 mb-10 p-2 bg-surface-container-low rounded-2xl w-fit">
+<button class="px-6 py-2.5 rounded-xl bg-surface-container-lowest text-primary font-bold shadow-sm transition-all text-sm">Todos los Espacios</button>
+<button class="px-6 py-2.5 rounded-xl text-on-surface-variant hover:bg-white/50 transition-all text-sm font-medium">Activos</button>
+<button class="px-6 py-2.5 rounded-xl text-on-surface-variant hover:bg-white/50 transition-all text-sm font-medium">En Mantenimiento</button>
+<button class="px-6 py-2.5 rounded-xl text-on-surface-variant hover:bg-white/50 transition-all text-sm font-medium">Ocupados</button>
+<div class="w-px h-6 bg-slate-300 mx-2"></div>
+<button class="p-2.5 text-on-surface-variant hover:bg-white/50 rounded-xl transition-all">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+<!-- Spaces Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1: Piscina -->
+<article class="group bg-surface-container-lowest rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 flex flex-col">
+<div class="relative h-64 overflow-hidden">
+<img alt="Piscina olímpica de diseño moderno" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Luxury infinity pool at sunset with minimalist architectural lines and soft turquoise water reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0kchiqkg6QE2-Z5Jrd55E-VZHB8dAvIKVNxcYm1VB2WnY3Z8JrXsLjtZVfPtvQV1L3lAJIxRmHBDKI5-PmyUORN24YQ-Oxx1SHtRiGiZsQ0D8L-wKgsAoJqZoODF83zXRylJH1o5VqbaSUNjV0uSCePL2-UimVrSQD63W9thqInq3GGGwZkHxp3OeKB184p90xBecx-55XRG0w2ANWmLnT1pp7TUAHMYZmSl_wrlECKQGSLOdXN-towGFWiS3D97khp_Fzs1aXu4"/>
+<div class="absolute top-4 left-4">
+<span class="px-4 py-1.5 bg-secondary-fixed text-on-secondary-fixed rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">Activo</span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline text-xl font-bold text-primary">Piscina Infinity</h3>
+<p class="text-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">location_on</span> Área Exterior • Nivel 1
+                                </p>
+</div>
+<div class="text-right">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Capacidad</p>
+<p class="text-lg font-black text-primary-container">45</p>
+</div>
+</div>
+<div class="mt-auto flex gap-3 pt-6 border-t border-slate-50">
+<button class="flex-1 py-3 px-4 bg-surface-container-high text-primary font-bold rounded-lg text-sm hover:bg-surface-container-highest transition-colors">Editar</button>
+<button class="px-4 py-3 bg-primary text-on-primary rounded-lg flex items-center justify-center hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 2: Gimnasio -->
+<article class="group bg-surface-container-lowest rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 flex flex-col">
+<div class="relative h-64 overflow-hidden">
+<img alt="Gimnasio de alto rendimiento" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="State-of-the-art modern gym with high ceilings, glass walls, and high-end equipment in a minimalist industrial setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNmSkSDpgow-ktWFwX4OZAthFLjWHRH00CQU4Q16MnIXReop2_-WEdihTy_6t4PFSllAM_xNhz1TY9CPmIzSnz9Q4es5g2muONTzlm1MKmEVsJbJHM6KGWQ0ZmryMcuQrc3ZaTOfiIuJWe7wTEvqBzGT10CGQNtVKV7PuPycFYd1ih7HlO9gZidPj66VF-VYcg1Hz4H8So3T4i4e_xfvhbWPuO4FCiBoqJ3XlZ4IUql2qx7_qqPNhGnrxRI3V4OUmGTvkwRXCpm_k"/>
+<div class="absolute top-4 left-4">
+<span class="px-4 py-1.5 bg-secondary-fixed text-on-secondary-fixed rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">Activo</span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline text-xl font-bold text-primary">Centro de Fitness</h3>
+<p class="text-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">location_on</span> Ala Norte • Nivel 2
+                                </p>
+</div>
+<div class="text-right">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Capacidad</p>
+<p class="text-lg font-black text-primary-container">25</p>
+</div>
+</div>
+<div class="mt-auto flex gap-3 pt-6 border-t border-slate-50">
+<button class="flex-1 py-3 px-4 bg-surface-container-high text-primary font-bold rounded-lg text-sm hover:bg-surface-container-highest transition-colors">Editar</button>
+<button class="px-4 py-3 bg-primary text-on-primary rounded-lg flex items-center justify-center hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-lg">settings_suggest</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 3: Zona BBQ -->
+<article class="group bg-surface-container-lowest rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 flex flex-col">
+<div class="relative h-64 overflow-hidden">
+<img alt="Zona BBQ y terraza" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Outdoor designer barbecue area with wooden pergola, stone counter tops, and ambient night lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlbwTPGaFdLcuR88vlOAdOoUodnPIStU08Z14hAk1PesuY8KyboTssOOmPtxkR28R14100ncng-eHcvOZj8F7drADcGcc9ngsUbb7jIgXX19IDXoscZM8OsdYnIWYjf11dadjQ1ifySAZXjyQzc0RxHhFZdqSLizzvnanrwcVlGKYFgni8XEA6wu_gRudbniv5g6r38E-fBfnkIRORTXuWfVlToZ6U7PhjI_OU0CQJWXWJDePyeYoy1MrF-6s877QaI8hZNANF2Qo"/>
+<div class="absolute top-4 left-4">
+<span class="px-4 py-1.5 bg-primary-fixed text-on-primary-fixed rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">Mantenimiento</span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline text-xl font-bold text-primary">Terraza Gourmet BBQ</h3>
+<p class="text-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">location_on</span> Rooftop • Nivel 12
+                                </p>
+</div>
+<div class="text-right">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Capacidad</p>
+<p class="text-lg font-black text-primary-container">12</p>
+</div>
+</div>
+<div class="mt-auto flex gap-3 pt-6 border-t border-slate-50">
+<button class="flex-1 py-3 px-4 bg-surface-container-high text-primary font-bold rounded-lg text-sm hover:bg-surface-container-highest transition-colors">Editar</button>
+<button class="px-4 py-3 bg-primary text-on-primary rounded-lg flex items-center justify-center hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-lg">build_circle</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 4: Sala de Billar -->
+<article class="group bg-surface-container-lowest rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 flex flex-col">
+<div class="relative h-64 overflow-hidden">
+<img alt="Sala de juegos y billar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Sophisticated billiards room with dark navy walls, gold accents, and a professional pool table under warm spotlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZuQ-WnHlHKbp4OeiJYz15jRbhnh_VZCRFJKivdgmb9ER6nir7YXYl3WlmDb-t6vPC1UOVpx3mDfIfZliSs7_7j2Z7t4JoSLJLNFPTdFO-s44ZnlTX8auMXShjd7gRuWG-MaWuZdBjvc4i-OpRl-yQKwQoqem_TEMQVPeDcLvcQ8qQuMnrQiNmYNJKwcn_xdYom2CTTUljpml_QANZ3lN0yeorGj-Osg5-krtN4xQynJzrixOZR0_XYtpfrGHVIlkpDDZoYg64FZg"/>
+<div class="absolute top-4 left-4">
+<span class="px-4 py-1.5 bg-secondary-fixed text-on-secondary-fixed rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">Activo</span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline text-xl font-bold text-primary">Lounge &amp; Billar</h3>
+<p class="text-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">location_on</span> Club Social • Nivel B1
+                                </p>
+</div>
+<div class="text-right">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Capacidad</p>
+<p class="text-lg font-black text-primary-container">15</p>
+</div>
+</div>
+<div class="mt-auto flex gap-3 pt-6 border-t border-slate-50">
+<button class="flex-1 py-3 px-4 bg-surface-container-high text-primary font-bold rounded-lg text-sm hover:bg-surface-container-highest transition-colors">Editar</button>
+<button class="px-4 py-3 bg-primary text-on-primary rounded-lg flex items-center justify-center hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-lg">games</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 5: Salón Social -->
+<article class="group bg-surface-container-lowest rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 flex flex-col">
+<div class="relative h-64 overflow-hidden">
+<img alt="Salón de eventos corporativos" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Grand ballroom with crystal chandeliers, white marble flooring, and elegant drapery in a luxurious setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvW9WacX-_PFOe-UwjTdryZ8jWBmTN38XvAFMR7pmaPn95ysjdqV_ZfU2mD5cqmArvq3KLlqNbnTQp7m3hStB88-rz9He1r7u2sl000jMSjUVL_Y6YBHQKhw8q3qg4utWj6_Do0WU_XE-rUW5Bliz5w7KRh8rJy9kfilVqZXwj2oOs5g6Jp8XMuXalvHYzMMY-OrhNokDTwn-9VKxuKcDJGvf054fTXaWrE3ZLK9eGiFA3Szuqujn3PqAH1vTABq8C_5qEbRJ2oU8"/>
+<div class="absolute top-4 left-4">
+<span class="px-4 py-1.5 bg-secondary-fixed text-on-secondary-fixed rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">Activo</span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline text-xl font-bold text-primary">Salón de Recepciones</h3>
+<p class="text-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">location_on</span> Edificio Central • Nivel 1
+                                </p>
+</div>
+<div class="text-right">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Capacidad</p>
+<p class="text-lg font-black text-primary-container">120</p>
+</div>
+</div>
+<div class="mt-auto flex gap-3 pt-6 border-t border-slate-50">
+<button class="flex-1 py-3 px-4 bg-surface-container-high text-primary font-bold rounded-lg text-sm hover:bg-surface-container-highest transition-colors">Editar</button>
+<button class="px-4 py-3 bg-primary text-on-primary rounded-lg flex items-center justify-center hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-lg">celebration</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 6: Canchas -->
+<article class="group bg-surface-container-lowest rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 flex flex-col">
+<div class="relative h-64 overflow-hidden">
+<img alt="Canchas de tenis profesionales" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Bird's eye view of clean blue tennis courts surrounded by lush green hedging and bright white lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-FmaDhjdtJUI1f-MTMXYs06Uz8dBPH5AvuVqV-uH8JpdI2FBPKBjzpxxm59HhTDW3WUfpDXYoO8Wof_UE_CER2ixN5E8CUo3PuY9P7usx5El1WKAWkec_1XAhQ-FFx5iNknwA-WATKl2PXDM2NpUNv1M9Nz2uzwAzp_8CwBLGkK6XphsNGiRf4qnBqBNXd0ofF-kZq-Ttd66EEMvbQvTWK-WwJC8D5-QlVzhTEKDsnJGUYm6xKZ7ISsw88ejUQNKzcUEm7D9p4yU"/>
+<div class="absolute top-4 left-4">
+<span class="px-4 py-1.5 bg-secondary-fixed text-on-secondary-fixed rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">Activo</span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline text-xl font-bold text-primary">Complejo de Tenis</h3>
+<p class="text-xs text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">location_on</span> Zona Deportiva • Exterior
+                                </p>
+</div>
+<div class="text-right">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Capacidad</p>
+<p class="text-lg font-black text-primary-container">4</p>
+</div>
+</div>
+<div class="mt-auto flex gap-3 pt-6 border-t border-slate-50">
+<button class="flex-1 py-3 px-4 bg-surface-container-high text-primary font-bold rounded-lg text-sm hover:bg-surface-container-highest transition-colors">Editar</button>
+<button class="px-4 py-3 bg-primary text-on-primary rounded-lg flex items-center justify-center hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-lg">sports_tennis</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</div>
+</main>
+<!-- Contextual FAB (Hidden on Space Management Details, but shown on main Dashboard/List view) -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform active:scale-95 z-50">
+<span class="material-symbols-outlined text-2xl">chat_bubble</span>
+</button>
+</body></html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#d1dbec",
+                    "primary-container": "#004d56",
+                    "primary": "#00353b",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#861c23",
+                    "tertiary": "#660110",
+                    "tertiary-fixed-dim": "#ffb3b0",
+                    "outline": "#70797a",
+                    "secondary-fixed-dim": "#68dba9",
+                    "on-tertiary-fixed": "#410006",
+                    "tertiary-fixed": "#ffdad8",
+                    "inverse-surface": "#27313e",
+                    "surface": "#f8f9ff",
+                    "background": "#f8f9ff",
+                    "on-surface": "#121c28",
+                    "surface-bright": "#f8f9ff",
+                    "on-error": "#ffffff",
+                    "surface-container-high": "#dfe9fa",
+                    "on-primary-fixed": "#001f24",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#881d24",
+                    "secondary-container": "#82f5c1",
+                    "on-secondary-container": "#00714e",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#006c4a",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#d9e3f4",
+                    "on-surface-variant": "#40484a",
+                    "on-secondary-fixed": "#002114",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#005137",
+                    "primary-fixed": "#b0edf7",
+                    "surface-tint": "#296770",
+                    "surface-container": "#e5eeff",
+                    "primary-fixed-dim": "#95d0db",
+                    "on-primary-fixed-variant": "#034f58",
+                    "inverse-primary": "#95d0db",
+                    "secondary-fixed": "#85f8c4",
+                    "surface-container-highest": "#d9e3f4",
+                    "on-background": "#121c28",
+                    "on-primary-container": "#81bdc7",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#eef4ff",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#bfc8ca",
+                    "on-tertiary-container": "#ff9694"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .headline { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky z-50 bg-slate-50 dark:bg-[#001a1d] flex justify-between items-center px-6 py-3 shadow-sm">
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold tracking-tight text-[#004D56] dark:text-[#00b4c4]">Architectural Curator</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#004D56] font-bold border-b-2 border-[#004D56] py-1 text-sm font-label" href="#">Panel de Control</a>
+<a class="text-slate-500 hover:text-[#004D56] transition-colors py-1 text-sm font-label" href="#">Mis Reservas</a>
+<a class="text-slate-500 hover:text-[#004D56] transition-colors py-1 text-sm font-label" href="#">Gestión de Espacios</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center bg-surface-container px-3 py-1.5 rounded-full">
+<span class="material-symbols-outlined text-outline text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48 text-on-surface-variant" placeholder="Buscar espacios..." type="text"/>
+</div>
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors rounded-full">
+<span class="material-symbols-outlined text-[#004D56] dark:text-[#00b4c4]">notifications</span>
+</button>
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors rounded-full">
+<span class="material-symbols-outlined text-[#004D56] dark:text-[#00b4c4]">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User profile avatar with role switcher" data-alt="Professional headshot of a resident user with a friendly expression in soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8HkLhIGjqoMbvU6RpLKRUp4DuNXlrYdtYA4Sw0b-dGqkcgF59w0960djvS7QQEarf8WkdtCl0O2K9YgpRtDxjlW7HAuN58sZYuB5aJsJFwX0BPjgBtFO3fYhorb1nvaCUl9EC5CHWC2NCIh8cQROU-7uf6cP7c_s01LuIXiYHvMGKOUL5-Z1wahH4DpOLjZdCTHYKzwBr69Wgvh8TltEs6cXEqQZPmu4JI2Kn5iQVTEK9J5gq1tbcOoy_EgFk-6z54CMrTt_YWhU"/>
+</div>
+</div>
+</header>
+<div class="flex min-h-screen">
+<!-- SideNavBar (Hidden on Mobile) -->
+<aside class="hidden lg:flex flex-col h-screen w-64 fixed left-0 top-0 pt-20 bg-slate-100 dark:bg-[#002b30] py-8 pr-4 z-40">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl">
+<div class="h-10 w-10 bg-primary-container rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">domain</span>
+</div>
+<div>
+<p class="text-sm font-bold text-primary font-headline">Management Console</p>
+<p class="text-xs text-slate-500 font-label">Residential Admin</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-6 py-3 bg-white dark:bg-[#00353b] text-[#004D56] dark:text-white rounded-r-full font-semibold shadow-sm transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm">Panel de Control</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-slate-600 dark:text-slate-400 hover:translate-x-1 hover:bg-white/50 dark:hover:bg-white/10 transition-all" href="#">
+<span class="material-symbols-outlined">event_available</span>
+<span class="text-sm">Mis Reservas</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-slate-600 dark:text-slate-400 hover:translate-x-1 hover:bg-white/50 dark:hover:bg-white/10 transition-all" href="#">
+<span class="material-symbols-outlined">domain</span>
+<span class="text-sm">Gestión de Espacios</span>
+</a>
+</nav>
+<div class="mt-auto pt-8 border-t border-outline-variant/20">
+<a class="flex items-center gap-3 px-6 py-3 text-slate-600 dark:text-slate-400 hover:translate-x-1 hover:bg-white/50 dark:hover:bg-white/10 transition-all" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="text-sm">Soporte</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-slate-600 dark:text-slate-400 hover:translate-x-1 hover:bg-white/50 dark:hover:bg-white/10 transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm">Configuración</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 lg:ml-64 p-6 md:p-10">
+<!-- Header Section -->
+<section class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<span class="text-xs font-bold tracking-widest text-primary uppercase font-label mb-2 block">Bienvenido de nuevo, Residente</span>
+<h1 class="text-4xl md:text-5xl font-extrabold text-on-surface font-headline leading-tight">Cura Tu Experiencia.</h1>
+<p class="text-on-surface-variant mt-2 max-w-xl text-lg font-body">Reserva amenidades exclusivas y gestiona tu estilo de vida residencial desde tu portal personal.</p>
+</div>
+<!-- Date Highlight Card -->
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center gap-6 shadow-sm border-l-4 border-primary">
+<div class="text-center">
+<p class="text-xs font-bold text-slate-500 uppercase font-label">Octubre</p>
+<p class="text-4xl font-black text-primary font-headline">24</p>
+</div>
+<div>
+<p class="text-lg font-bold text-on-surface font-headline">Jueves</p>
+<div class="flex items-center gap-1 text-secondary font-medium text-sm">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>10:30 AM</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Filter Chips -->
+<div class="flex flex-wrap gap-3 mb-8">
+<button class="px-5 py-2 rounded-full bg-primary text-on-primary text-sm font-semibold shadow-md">Todos los Espacios</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-sm font-medium hover:bg-surface-container-highest transition-colors">Club Social</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-sm font-medium hover:bg-surface-container-highest transition-colors">Bienestar</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-sm font-medium hover:bg-surface-container-highest transition-colors">Espacio de Trabajo</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-sm font-medium hover:bg-surface-container-highest transition-colors">Exterior</button>
+</div>
+<!-- Asymmetric Bento Grid for Spaces -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Large Feature Card -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="aspect-[16/9] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Ultra modern rooftop lounge with infinity pool, sleek designer furniture, and panoramic city skyline view at twilight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWtTay_dXrIXtkPJcjQkePTA8FeAl6ZXaIoBmKcMf9AFiVa6_y1GYlhQBtu8gDYkKP0civke4xjWeB6SU83bGPy0aPcKDw9ZlvarwR7638tleuN5B_jrMO7nr-t4OlcXb7qDlrq3oRqIpnJFrVuIZwdnvies4MMZbX_2NccM7g5h7maOQT-xdhDWu_s6vP8d-v26Q_2D52FbnIFC9KRDyQZcLbtDMilgyUQc1hTn1HkdgReQ1m2FHSw1OKza6HyKraS8OAAlp3Bp8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-8">
+<div class="flex justify-between items-end">
+<div>
+<span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed text-xs font-bold rounded-full mb-3 inline-block">Disponible</span>
+<h3 class="text-3xl font-bold text-white font-headline">Terraza Sky &amp; Piscina Infinita</h3>
+<div class="flex items-center gap-4 mt-2 text-white/80 text-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">groups</span> Max 30</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">star</span> 4.9 Calificación del Curador</span>
+</div>
+</div>
+<button class="px-6 py-3 bg-white text-primary rounded-xl font-bold hover:bg-primary-fixed transition-colors flex items-center gap-2">
+                                Consultar Disponibilidad
+                                <span class="material-symbols-outlined text-sm">calendar_month</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Secondary Card 1 -->
+<div class="md:col-span-4 flex flex-col bg-surface-container-low rounded-xl p-1">
+<div class="h-48 overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover" data-alt="High-end private gym with wooden accents, state-of-the-art equipment, and soft morning light through floor-to-ceiling windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwcnK_txZFqZyZF41nC53teWt3lqIL87YZgoyVwPOCPClVaEmJh-OiuNYl4mCNM4DAlfU9-2mJHR1xhi5BHcbcRhaiNJvhlYO5SFJ9zv_KmN2F4UsWqJCIUxGOzNeA7KpOCZrFdkFQ5Ztsp4Xete7AA1p-lmTAvTYCIDrJ_b0gXkCygLALbkF6evU4TM_OIYqUsphmlep_ot91i0Nqhf9JAxFnlV_veg3Yl-HmZpZ-RXgH6UFE6HsZ512l8m-XxpA0O8FlTYr6oYU"/>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<span class="px-2 py-0.5 bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-bold rounded-full mb-2 self-start">Mantenimiento</span>
+<h4 class="text-xl font-bold text-on-surface font-headline">Suite Fitness Premium</h4>
+<p class="text-sm text-on-surface-variant mt-2 mb-6">Equipado con bicicletas Peloton y circuitos especializados de entrenamiento de fuerza.</p>
+<div class="mt-auto">
+<button class="w-full py-3 bg-surface-container-highest text-on-surface-variant rounded-xl font-bold opacity-60 cursor-not-allowed flex justify-center items-center gap-2">
+                                Restringido Actualmente
+                                <span class="material-symbols-outlined text-sm">lock</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Secondary Card 2 -->
+<div class="md:col-span-4 flex flex-col bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-lg transition-all">
+<div class="h-48 overflow-hidden rounded-t-xl relative">
+<img class="w-full h-full object-cover" data-alt="Minimalist private library and co-working hub with oak shelving, designer lamps, and sound-dampening acoustic panels" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAXg0iX-MlVUHY8R2C4XDGN21nQJkQixkl0Iyp_VfdsgP7dLkKAVzAqQ4WpD_YnBLqcnHXnAIbA8JigvZWzRBB6D-g01-zbNfaqxtuVEuVA5VMgYnpZyqnkt5UYZ-QmhgBZa7guqbUWMXY0f_TPR0yBe7hJarxC4MFyq70gr22gEvcyh-k2ByBv2h3XumqLFJ7_D2p049GBmhd0PKXnNCsWFYY-_ss3Y9kHLVb1VCeOWQkjvc7t5Y85HYCN439-9z7i5usLKHCT_E"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-2 py-1 rounded-md text-[10px] font-bold text-primary">POPULAR</div>
+</div>
+<div class="p-5">
+<span class="px-2 py-0.5 bg-secondary-fixed text-on-secondary-fixed text-[10px] font-bold rounded-full mb-2 inline-block">Disponible</span>
+<h4 class="text-xl font-bold text-on-surface font-headline">La Biblioteca del Curador</h4>
+<div class="mt-4 flex flex-col gap-3">
+<div class="flex items-center justify-between text-xs text-on-surface-variant">
+<span>Zona de Silencio</span>
+<span class="font-bold text-secondary">Abierto 24/7</span>
+</div>
+<button class="w-full py-3 border-2 border-primary text-primary rounded-xl font-bold hover:bg-primary hover:text-white transition-all flex justify-center items-center gap-2">
+                                Consultar Disponibilidad
+                            </button>
+</div>
+</div>
+</div>
+<!-- Secondary Card 3 -->
+<div class="md:col-span-8 bg-surface-container-highest/30 rounded-xl p-8 flex flex-col md:flex-row gap-8 items-center border-2 border-dashed border-outline-variant/30">
+<div class="flex-1">
+<h3 class="text-2xl font-bold text-on-surface font-headline mb-3">¿Deseas organizar un evento privado?</h3>
+<p class="text-on-surface-variant mb-6">Nuestro Gran Salón y la Cocina de Chef Privado pueden ser curados para tu próxima ocasión especial. Aplican tarifas residenciales.</p>
+<div class="flex gap-4">
+<button class="px-6 py-3 bg-primary text-on-primary rounded-xl font-bold shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform">Consultar Ahora</button>
+<button class="px-6 py-3 bg-white text-on-surface-variant border border-outline-variant rounded-xl font-bold hover:bg-surface-container transition-colors">Descargar Brochure</button>
+</div>
+</div>
+<div class="w-full md:w-64 aspect-square rounded-2xl overflow-hidden shadow-2xl rotate-3">
+<img class="w-full h-full object-cover" data-alt="Sophisticated banquet table setting with crystal glassware, white roses, and warm ambient candlelight in a grand hall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNduR-S0WovLzvVWbZv1i5za9RLi_BVnEAo3f6dd9-ZHFKLWC-gVH9_ao0Gw1b8Da4p05ijrAc7EbIFWXwIUlfDcfYpDs974NoGkOdFc6mYy4KWDWpKB_T3KqCtjyTQEL4yZ84YjthXbEYDisDqu9nJLVb3zeILyWbMULoR0LCkQq0zxXQZ7ovvpzfLPn0FLVikktEQ9Ympij5X-Iv2d57cATAhyxrt9WxSaO10vr6Ui4tKJTgARFBcp9ptLQQcgXw4OT8Seek1dU"/>
+</div>
+</div>
+</div>
+<!-- Footer Section -->
+<footer class="mt-20 pt-10 border-t border-surface-variant flex flex-col md:flex-row justify-between gap-8 text-on-surface-variant">
+<div>
+<p class="font-headline font-bold text-primary mb-2">Architectural Curator</p>
+<p class="text-xs max-w-xs">Premium residential management platform. Dedicated to elevating the human experience through intentional space design.</p>
+</div>
+<div class="flex gap-10">
+<div class="flex flex-col gap-2">
+<p class="text-xs font-bold text-on-surface font-label uppercase tracking-wider">Enlaces Rápidos</p>
+<a class="text-xs hover:text-primary transition-colors" href="#">Reglas del Edificio</a>
+<a class="text-xs hover:text-primary transition-colors" href="#">Solicitud de Mantenimiento</a>
+<a class="text-xs hover:text-primary transition-colors" href="#">Foro Comunitario</a>
+</div>
+<div class="flex flex-col gap-2">
+<p class="text-xs font-bold text-on-surface font-label uppercase tracking-wider">Contacto</p>
+<a class="text-xs hover:text-primary transition-colors" href="#">Conserjería</a>
+<a class="text-xs hover:text-primary transition-colors" href="#">Línea de Emergencia</a>
+<a class="text-xs hover:text-primary transition-colors" href="#">Oficina Administrativa</a>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xs">© 2024 Architectural Curator</p>
+<p class="text-[10px] mt-1 text-outline">v2.4.1 Production Build</p>
+</div>
+</footer>
+</main>
+</div>
+<!-- Mobile Navigation Bar -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface-container-lowest/80 backdrop-blur-xl border-t border-outline-variant/10 px-6 py-3 flex justify-between items-center z-50">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-[10px] font-bold font-label">Inicio</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">event_available</span>
+<span class="text-[10px] font-medium font-label">Reservas</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">notifications</span>
+<span class="text-[10px] font-medium font-label">Alertas</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium font-label">Perfil</span>
+</button>
+</nav>
+<!-- Contextual FAB (Only on Mobile) -->
+<button class="md:hidden fixed bottom-24 right-6 h-14 w-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center z-50 hover:scale-110 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">add</span>
+</button>
+</body></html>
